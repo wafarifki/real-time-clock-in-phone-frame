@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Stylish Music Player</title>
+        <meta name="author" content="Wafa Rifqi Anafin">
+        <meta property="og:type" content="website"/>
+        <meta
+            name="description"
+            content="Real time clock, clock, html5 clock, html clock, html jam, html5 jam, bikin jam, bikin web jam">
+        <meta property="og:title" content="Premium and High Design Music Player"/>
+        <meta property="og:description" content="Pemutar Musik Design Premium"/>
+        <meta property="og:image" content="https://wafarifki.me/hai.jpeg"/>
+        <meta name="description" content="Premium and High Design Real-time Clock"/>
+        <link rel="shortcut icon" href="favicon.png"/>
+        <link
+            href='https://fonts.googleapis.com/css?family=Lato:400,700,900'
+            rel='stylesheet'
+            type='text/css'>
+        <script src="https://use.typekit.net/hoy3lrg.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            try {
+                Typekit.load({async: true});
+            } catch (e) {}
+        </script>
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+        <link rel="stylesheet" href="style.css">
+
+    </head>
+    <body class="g-snows" id="jsi-snows">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <div id="wrapper">
+            <div id="iphone">
+                <div id="camera">
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <div id="screen">
+                    <div id="content-wrap">
+                        <div id="background"></div>
+                        <div id="content">
+                            <div class="jcarousel">
+                                <center>
+                                    <div class="clock">
+                                        <div class="hourHand"></div>
+                                        <div class="minuteHand"></div>
+                                        <div class="secondHand"></div>
+                                        <div class="center"></div>
+                                        <ul>
+                                            <li>
+                                                <span>1</span></li>
+                                            <li>
+                                                <span>2</span></li>
+                                            <li>
+                                                <span>3</span></li>
+                                            <li>
+                                                <span>4</span></li>
+                                            <li>
+                                                <span>5</span></li>
+                                            <li>
+                                                <span>6</span></li>
+                                            <li>
+                                                <span>7</span></li>
+                                            <li>
+                                                <span>8</span></li>
+                                            <li>
+                                                <span>9</span></li>
+                                            <li>
+                                                <span>10</span></li>
+                                            <li>
+                                                <span>11</span></li>
+                                            <li>
+                                                <span>12</span></li>
+                                        </ul>
+                                    </div>
+
+                                    <audio
+                                        src="https://sampleswap.org/samples-ghost/DRUMS%20and%20SINGLE%20HITS/snares/5[kb]sidestick.aif.mp3"
+                                        class="audio"></audio>
+                                </center>
+                            </div>
+
+                        </div>
+                        <div id="overlay"></div>
+                    </div>
+                </div>
+                <div id="home-btn"></div>
+            </div>
+            <marquee>Designed By Wafa Rifqi Anafin...</marquee>
+
+        </div>
+
+        <!-- partial -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+        <script src='https://use.fontawesome.com/15af25ac7b.js'></script>
+        <script
+            src='https://cdnjs.cloudflare.com/ajax/libs/jcarousel/0.3.1/jquery.jcarousel.min.js'></script>
+        <script>
+            window.onload = function () {
+
+                const hourHand = document.querySelector('.hourHand');
+                const minuteHand = document.querySelector('.minuteHand');
+                const secondHand = document.querySelector('.secondHand');
+                const clock = document.querySelector('.clock');
+                const audio = document.querySelector('.audio');
+
+                function setDate() {
+                    const today = new Date();
+
+                    const second = today.getSeconds();
+                    const secondDeg = ((second / 60) * 360) + 360;
+                    secondHand.style.transform = `rotate(${secondDeg}deg)`;
+
+                    audio.play();
+
+                    const minute = today.getMinutes();
+                    const minuteDeg = ((minute / 60) * 360);
+                    minuteHand.style.transform = `rotate(${minuteDeg}deg)`;
+
+                    const hour = today.getHours();
+                    const hourDeg = ((hour / 12) * 360);
+                    hourHand.style.transform = `rotate(${hourDeg}deg)`;
+
+                }
+
+                setInterval(setDate, 1000);
+
+            }
+        </script>
+    </body>
+</html>
